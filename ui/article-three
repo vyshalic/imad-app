@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Article 3| Vyshali</title>
+        <meta name="viewport" content="width-device-width ,inital-scale=1"/>
+    </head>
+    <body>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <div>
+            <h3> This is my third article</h3>
+        </div>
+        <div>
+            <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+        </div>
+    </body>
+</html>
+
