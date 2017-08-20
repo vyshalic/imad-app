@@ -4,7 +4,10 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articleOne={
+
+
+var articles= {
+    'article-one':{
     title:'Article One|Vyshali C',
     heading:'Article One',
     date:' 15 Aug 2017',
@@ -14,6 +17,29 @@ var articleOne={
             </p>
              <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
             </p>`
+    },
+    'article-two':{
+         title:'Article Two|Vyshali C',
+    heading:'Article Two',
+    date:' 15 Aug 2017',
+    content:`<p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>`
+    },
+    'article-three':{
+    title:'Article Three|Vyshali C',
+    heading:'Article Three',
+    date:' 15 Aug 2017',
+    content:`<p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>
+             <p>This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.This is where the actual content of the page is put.
+            </p>`
+    }
 };
 function createTemplate(data){
     var title=data.title;
@@ -55,14 +81,11 @@ var htmlTemplate=`
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one',function(req, res){
-   res.send(createTemplate(articleOne));
-});
-app.get('/article-two',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three',function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName',function(req, res){
+    //By putting a colon infront , the server tries to match the name
+    //passing parameter as articles[articleName] to match the url name and get file
+    var articleName=req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
