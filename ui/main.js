@@ -16,6 +16,7 @@ button.onclick=function(){
     }
 };
 //Make the actual request
-request.open('GET',)
+request.open('GET','http://vyshalichandramohan.imad.hasura-app.io/counter',true);
+request.send(null);
   
 };
