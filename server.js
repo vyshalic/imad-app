@@ -47,34 +47,35 @@ function createTemplate(data){
     var date=title.date;
     var content=title.content;
     
-var htmlTemplate=`
-    <html>
-    <head>
-        <title>
-        ${title}
-        </title>
-        <meta name="viewport" content="width-device-width ,inital-scale=1"/>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-      <div class="container">
-        <div>
-            <a href="/">Home</a>
-        </div>
-        <div>
-            <h3> ${heading}</h3>
+    var htmlTemplate=`
+        <html>
+        <head>
+            <title>
+            ${title}
+            </title>
+            <meta name="viewport" content="width-device-width ,inital-scale=1"/>
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+          <div class="container">
             <div>
-            ${date}
+                <a href="/">Home</a>
             </div>
-        </div>
-        <div>
-        ${content};
-        </div>
-      </div>
-    </body>
-</html>
-`;
-}
+            <div>
+                <h3> ${heading}</h3>
+                <div>
+                ${date}
+                </div>
+            </div>
+            <div>
+            ${content};
+            </div>
+          </div>
+        </body>
+    </html>
+    `;
+    return htmlTemplate;
+    }
 
 
 
